@@ -1,0 +1,23 @@
+table {
+    max-width: 60rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    table-layout: fixed;
+    border-spacing: 1.5rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    font-size: 0.9rem;
+    color: #66d9ef;
+    background-color: #f7f7f7;
+}
+
+table tbody {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
