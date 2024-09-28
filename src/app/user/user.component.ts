@@ -1,10 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { InvestmentData } from '../calculate.model';
+import { InvestmentService } from '../service/investment.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css'] // corrected 'styleUrl' to 'styleUrls'
+  styleUrls: ['./user.component.css']
+
 })
 export class UserComponent {
   @Output() calculate = new EventEmitter<InvestmentData>();
@@ -14,6 +16,8 @@ export class UserComponent {
   expectedReturn!: number;
   duration!: number;
 
+  constructor(private investmentService:InvestmentService){}
+
   onSubmit() {
     const investmentData = new InvestmentData(
       this.initialInvestment,
@@ -21,6 +25,6 @@ export class UserComponent {
       this.annualInvestment,
       this.expectedReturn
     );
-    this.calculate.emit(investmentData);
+    this.investmentService.calculateInvestmentResults(investmentData)
   }
 }
